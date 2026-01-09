@@ -177,7 +177,8 @@
 
 <!-- FEED SCRIPT -->
 <script>
-const imageFeed = [
+const feeds = {
+  "2610": [
   "https://i.pinimg.com/1200x/81/b4/d3/81b4d3a72d13ddb0126c49683785973b.jpg",
   "https://i.pinimg.com/1200x/71/af/1a/71af1aaf29a57ba7a0c67597a7cd2b6b.jpg",
   "https://i.pinimg.com/1200x/b6/6d/15/b66d15d5d36d6e694a25502e14b6baff.jpg",
@@ -205,30 +206,48 @@ const imageFeed = [
   
 
 
-];
+],
+"2009": [
+    "https://i.pinimg.com/1200x/d3/41/c4/d341c4f59ab8930a5db0a76660378a67.jpg",
+  "https://i.pinimg.com/736x/c2/10/c0/c210c056edc7e09a748a520dd69df183.jpg",
+  "https://i.pinimg.com/736x/de/5b/30/de5b30981bae1ae5da7e6c7a4797750e.jpg",
+  "https://i.pinimg.com/1200x/d4/1b/4a/d41b4a72901a3b048e5e97feb2d78dbe.jpg",
+  "https://i.pinimg.com/736x/a2/95/9e/a2959e7cd731523464f454b4584a7bf1.jpg",
+  "https://i.pinimg.com/736x/89/d3/b2/89d3b21ce9a7fe758f0e08efa814fc83.jpg",
+  "https://i.pinimg.com/1200x/19/38/a2/1938a2ddfc300e6c99075204146993e7.jpg",
+  "https://i.pinimg.com/736x/a4/84/97/a484979f8271e9ed902c957b45d11217.jpg",
+  "https://i.pinimg.com/736x/45/d8/c2/45d8c22fc684bfcfb93782078a7ca4a1.jpg",
+  "https://i.pinimg.com/1200x/c6/2c/97/c62c9727029cb57942c3df4a2582adf6.jpg",
+  "https://i.pinimg.com/1200x/06/aa/33/06aa33c362dc2a74ee03889d0b6de156.jpg",
+  "https://i.pinimg.com/736x/ee/8c/29/ee8c29e68ca231dcf67c18aca3315d69.jpg"
+],
+"1610": [
+  "https://i.pinimg.com/736x/79/85/14/798514759c0d32dbf45de3ac7793faa7.jpg",
+  "https://i.pinimg.com/736x/da/c2/93/dac29324c43031f81d2d4bd28f8860a7.jpg",
+  "https://i.pinimg.com/1200x/b2/7b/3b/b27b3b89284cae14cf03527b4d0c5821.jpg",
+  "https://i.pinimg.com/736x/0b/2a/6f/0b2a6f674d67783833e966e9c8df1a6c.jpg",  
+  "https://i.pinimg.com/736x/9e/38/57/9e38574f6bf813f1abda278c11c0cf92.jpg",
+  "https://i.pinimg.com/736x/c0/43/53/c0435307e254b5504b70b1a5cf4c6f63.jpg",
+  "https://i.pinimg.com/736x/5a/15/a3/5a15a37dffe552b60e71a504ab7d7478.jpg",
+  "https://i.pinimg.com/736x/3a/8f/ff/3a8fff1c16ec05201b6e9b8064524ee2.jpg",
+  "https://i.pinimg.com/1200x/9a/6d/da/9a6ddae9d5ce16589d5bb37f2144b28a.jpg",
+  "https://i.pinimg.com/736x/77/b2/df/77b2df8cd24f74ad9c804de03d88234b.jpg",
+  "https://i.pinimg.com/736x/87/15/f7/8715f78cca8d03d82366b2a196030dc1.jpg",
+  "https://i.pinimg.com/736x/06/1a/fc/061afc5365025bfdb540c66b12487a2e.jpg",
+  "https://i.pinimg.com/736x/3a/59/fb/3a59fbec4154b2967d8d0cf3f0d4ec3c.jpg",
+  "https://i.pinimg.com/736x/0e/45/a6/0e45a6b40a899ad6c3b190a79f3b4f6a.jpg",
+]
+};
 
-const feed = document.getElementById("feed");
-
-imageFeed.forEach((src, i) => {
-  const leak = document.createElement("div");
-  leak.className = "leak break-inside-avoid";
-  leak.innerHTML = `
-    <p class="stamp mb-2">LEAK_${String(i+1).padStart(3,"0")}</p>
-    <img src="${src}" class="w-full mb-3 opacity-80">
-    <p class="text-sm">Quelle gespiegelt · <span class="warning">instabil</span></p>
-  `;
-  feed.appendChild(leak);
-});
-
-/* PASSWORD SYSTEM */
-const correctCode = "2610";
 const overlay = document.getElementById("passwordOverlay");
 const content = document.getElementById("pageContent");
 const input = document.getElementById("passwordInput");
 const error = document.getElementById("errorMsg");
+const feed = document.getElementById("feed");
 
+// prüfen, ob bereits Zugriff
 if (sessionStorage.getItem("satch_access") === "granted") {
-  unlock();
+  unlock(sessionStorage.getItem("satch_feed"));
 }
 
 input.addEventListener("keydown", e => {
@@ -236,18 +255,33 @@ input.addEventListener("keydown", e => {
 });
 
 function checkCode() {
-  if (input.value === correctCode) {
-    sessionStorage.setItem("satch_access","granted");
-    unlock();
+  const entered = input.value;
+  if (feeds[entered]) {
+    sessionStorage.setItem("satch_access", "granted");
+    sessionStorage.setItem("satch_feed", entered);
+    unlock(entered);
   } else {
     error.classList.remove("hidden");
     input.value = "";
   }
 }
 
-function unlock() {
+function unlock(feedKey) {
   overlay.style.display = "none";
   content.classList.remove("locked");
+  const selectedFeed = feeds[feedKey];
+
+  feed.innerHTML = ""; // leeren bevor gefüllt
+  selectedFeed.forEach((src, i) => {
+    const leak = document.createElement("div");
+    leak.className = "leak break-inside-avoid";
+    leak.innerHTML = `
+      <p class="stamp mb-2">LEAK_${String(i+1).padStart(3,"0")}</p>
+      <img src="${src}" class="w-full mb-3 opacity-80">
+      <p class="text-sm">Quelle gespiegelt · <span class="warning">instabil</span></p>
+    `;
+    feed.appendChild(leak);
+  });
 }
 </script>
 
