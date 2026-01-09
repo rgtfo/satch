@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>SATCH ARCHIV – LEAKS</title>
+
+  <style>
+    body {
+      background:#040404;
+      color:#cfcfcf;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .scan {
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index:1;
+    }
+
+    .leak {
+      border:1px solid #222;
+      background:#070707;
+      padding:1rem;
+      transition:all .2s ease;
+    }
+
+    .leak:hover {
+      border-color:#ff0077;
+      background:#0b0b0b;
+    }
+
+    .stamp {
+      font-size:0.7rem;
+      color:#777;
+      letter-spacing:0.15em;
+    }
+
+    .warning {
+      color:#ff4444;
+      font-weight:bold;
+    }
+
+    /* LOCKED STATE */
+    .locked {
+      filter: blur(8px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* OVERLAY */
+    #passwordOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden relative">
+
+<div class="scan"></div>
+
+<!-- PASSWORD OVERLAY -->
+<div id="passwordOverlay">
+  <div class="border border-red-700 p-10 max-w-md w-full text-center space-y-6">
+    <p class="text-red-500 tracking-widest text-xs">
+      ARCHIV-ZUGRIFF GESCHÜTZT
+    </p>
+
+    <h2 class="text-xl text-pink-500 tracking-[0.3em]">
+      CODE EINGEBEN
+    </h2>
+
+    <input
+      id="passwordInput"
+      type="password"
+      placeholder="••••"
+      class="w-full bg-black border border-gray-700 text-center py-3 tracking-widest text-lg text-cyan-300 focus:outline-none focus:border-pink-500"
+      autofocus
+    />
+
+    <p id="errorMsg" class="text-red-500 text-xs hidden">
+      ZUGRIFF VERWEIGERT
+    </p>
+
+    <p class="text-gray-500 text-[10px] tracking-widest">
+      ALLE EINGABEN WERDEN PROTOKOLLIERT
+    </p>
+  </div>
+</div>
+
+<!-- PAGE CONTENT WRAPPER -->
+<div id="pageContent" class="locked">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-40 bg-black/90 border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex gap-10 text-xs tracking-widest">
+    <a href="index.html" class="text-gray-400 hover:text-white hover:underline">HOME</a>
+    <a href="regeln.html" class="text-gray-400 hover:text-white hover:underline">REGELWERK</a>
+    <a href="archiv.html" class="text-pink-500 hover:underline">ARCHIV</a>
+    <a href="founders.html" class="text-gray-400 hover:text-white hover:underline">GRÜNDER</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="pt-28 pb-16 max-w-[900px] mx-auto px-6 relative z-10">
+  <div class="flex justify-center relative mb-10">
+    <img src="/alert.gif" class="fixed w-50 right-2 top-12">
+  </div>
+
+  <h1 class="text-4xl tracking-[0.35em] text-center text-pink-500 mb-6">
+    ARCHIV / LEAKS
+  </h1>
+
+  <p class="text-center text-xs text-gray-500">
+    Zugriff nicht autorisiert · Zusammenstellung fragmentiert · Quelle unbekannt
+  </p>
+</header>
+
+<!-- CONTENT -->
+<main class="max-w-[1100px] mx-auto px-6 pb-32 space-y-24 relative z-10">
+
+<section>
+  <p class="text-lg text-cyan-300 leading-relaxed">
+    Die folgenden Inhalte wurden nicht veröffentlicht.
+    Sie wurden gesammelt, gespiegelt und falsch zugeordnet.
+  </p>
+  <p class="text-lg text-cyan-300 leading-relaxed">
+    Ordnung existiert nur rückblickend.
+    Equilibrium war erforderlich.
+  </p>
+  <p class="warning mt-4">
+    ⚠ BETRACHTUNG GILT ALS INTERAKTION
+  </p>
+  
+</section>
+
+<section>
+  
+  <h2 class="text-xl tracking-widest text-orange-400 mb-8">
+    VISUELLER FEED // AUTO-GENERIERT
+  </h2>
+  <p class="text-xs text-gray-600 text-center mb-5">Datum: Zahlen verraten. Zwei Dinge bestimmen den Takt des Lebens. Das eine verführt das andere brüllt.</p>
+
+  <div id="feed" class="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6"></div>
+</section>
+
+<div class="flex w-full justify-center">
+  <p class="mt-4">
+    Gründernotiz: Wer BADDIES hat braucht nur mehr SEIN Kind. Erkennt den Namen hinter der Legende.
+  </p>
+</div>
+
+</main>
+
+
+
+<footer class="py-10 text-center text-xs text-gray-600 border-t border-gray-800">
+  SATCH · ARCHIVSYSTEM · ZUGRIFF PROTOKOLLIERT
+</footer>
+
+</div>
+
+<!-- FEED SCRIPT -->
+<script>
+const imageFeed = [
+  "https://i.pinimg.com/1200x/81/b4/d3/81b4d3a72d13ddb0126c49683785973b.jpg",
+  "https://i.pinimg.com/1200x/71/af/1a/71af1aaf29a57ba7a0c67597a7cd2b6b.jpg",
+  "https://i.pinimg.com/1200x/b6/6d/15/b66d15d5d36d6e694a25502e14b6baff.jpg",
+  "https://i.pinimg.com/736x/ef/3b/93/ef3b93a583789327639478b3afdec021.jpg",
+  "https://i.pinimg.com/1200x/61/93/63/619363c4ec92c4587b9476a195fa3cde.jpg",
+  "https://i.pinimg.com/1200x/2b/8f/1a/2b8f1a9a95078fe63b53428310b65e00.jpg",
+  "https://i.pinimg.com/736x/32/ea/e7/32eae75802626adf2e3c48332d81e715.jpg",
+  "https://i.pinimg.com/1200x/31/63/6f/31636f6b92c55910f4588d6339dced69.jpg",
+  "https://i.pinimg.com/736x/c6/4a/2a/c64a2a33d893da16cc63992698962a8d.jpg",
+  "https://i.pinimg.com/1200x/3a/b3/2b/3ab32bbe0f304d0dd578ea12f591e8c8.jpg",
+  
+  "https://i.pinimg.com/1200x/f3/dd/cb/f3ddcbb5a812e24adc6e2742679db0f0.jpg",
+  "https://i.pinimg.com/1200x/92/63/cd/9263cdf6a849a7148becdb3e6e0e2eed.jpg",
+  "https://i.pinimg.com/736x/b7/9c/77/b79c77b9d56060a803bd3695370a8f09.jpg",
+  "https://i.pinimg.com/736x/ad/96/9e/ad969ef7800f6e80ddbf5e326950e564.jpg",
+  "https://i.pinimg.com/1200x/ea/4a/f0/ea4af086995c82f8ccb0f369b9d7cc98.jpg",
+  "https://i.pinimg.com/736x/57/72/a3/5772a3dfcdd540a6c991987ba123a82a.jpg",
+  "https://i.pinimg.com/1200x/54/b6/d2/54b6d28118633045398b8f6f123a9d1a.jpg",
+  "https://i.pinimg.com/1200x/59/dd/d5/59ddd5992b54533791f80beed6618e65.jpg",
+  "https://i.pinimg.com/1200x/29/db/0a/29db0a3029a986f2d174551ea75eb206.jpg",
+  "https://i.pinimg.com/1200x/e9/86/03/e986030301dbb459e618cdeaf7467e11.jpg",
+  "https://i.pinimg.com/1200x/92/73/30/927330da75ba3b185bdcf761b678ba54.jpg",
+  "https://i.pinimg.com/736x/c6/67/2d/c6672d1dd00c97150becee0d9c83283a.jpg",
+  "https://i.pinimg.com/736x/ec/ad/d7/ecadd71fb76bc2f034bfecb93f407feb.jpg",
+  
+
+
+];
+
+const feed = document.getElementById("feed");
+
+imageFeed.forEach((src, i) => {
+  const leak = document.createElement("div");
+  leak.className = "leak break-inside-avoid";
+  leak.innerHTML = `
+    <p class="stamp mb-2">LEAK_${String(i+1).padStart(3,"0")}</p>
+    <img src="${src}" class="w-full mb-3 opacity-80">
+    <p class="text-sm">Quelle gespiegelt · <span class="warning">instabil</span></p>
+  `;
+  feed.appendChild(leak);
+});
+
+/* PASSWORD SYSTEM */
+const correctCode = "2610";
+const overlay = document.getElementById("passwordOverlay");
+const content = document.getElementById("pageContent");
+const input = document.getElementById("passwordInput");
+const error = document.getElementById("errorMsg");
+
+if (sessionStorage.getItem("satch_access") === "granted") {
+  unlock();
+}
+
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") checkCode();
+});
+
+function checkCode() {
+  if (input.value === correctCode) {
+    sessionStorage.setItem("satch_access","granted");
+    unlock();
+  } else {
+    error.classList.remove("hidden");
+    input.value = "";
+  }
+}
+
+function unlock() {
+  overlay.style.display = "none";
+  content.classList.remove("locked");
+}
+</script>
+
+</body>
+</html>
+

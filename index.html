@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offizielle Seite der SATCH-Glaubensgemeinschaft.">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>SATCH</title>
+
+  <style>
+    @keyframes blink {
+      0%,100% {opacity:1;}
+      50% {opacity:0;}
+    }
+    .blink { animation: blink 0.7s infinite; }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255,0,255,0.04),
+        rgba(255,0,255,0.04) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index: 1;
+    }
+
+    @keyframes glitch {
+      0%,100% {opacity:1;}
+      50% {opacity:0.85;}
+    }
+    .glitch {
+      animation: glitch 0.12s infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-mono overflow-x-hidden relative">
+
+<div class="overlay"></div>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-40 bg-black/90 border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex gap-10 text-xs tracking-widest">
+    <a href="index.html" class="text-pink-500 hover:underline">HOME</a>
+    <a href="regeln.html" class="text-gray-400 hover:text-white hover:underline">REGELWERK</a>
+    <a href="archiv.html" class="text-gray-400 hover:text-white hover:underline">ARCHIV</a>
+    <a href="founders.html" class="text-gray-400 hover:text-white hover:underline">GRÜNDER</a>
+  </div>
+</nav>
+
+<!-- COUNTDOWN -->
+<div id="countdown" class="fixed top-14 right-6 text-xs tracking-widest text-red-500 z-30">
+  SYNC IN PROGRESS
+</div>
+
+<!-- FLOATING LINKS -->
+<a href="#"
+   onclick="showDenied(event)"
+   class="fixed text-xs text-red-400 top-[18%] left-[4%] blink">
+  ARCHIV_01
+</a>
+
+<a href="/troll.avif" download="virus_i762548r_#iug uzafitflauhgbuvkjhgfvghvknljhlkbj hgcdfhvxcjbknhjlmökjmnbvfgcdxbvngbmn,m.,nbmv nc.avif" class="fixed text-xs text-cyan-400 top-[62%] left-[16%] blink">
+  PORTAL
+</a>
+
+<a href="https://youtu.be/xvFZjo5PgG0"
+   class="fixed text-xs text-green-400 top-[39%] right-[6%] blink">
+  ENTER
+</a>
+
+<a href="https://i.pinimg.com/736x/ad/96/9e/ad969ef7800f6e80ddbf5e326950e564.jpg"
+   class="fixed text-xs text-yellow-300 top-[10%] right-[28%] blink">
+  NICHT_ÖFFNEN
+</a>
+
+<!-- HEADER -->
+<header class="pt-28 pb-12 max-w-[900px] mx-auto px-6 relative">
+  <img src="satch.jpg" class="justify-center h-50 mx-auto">
+
+  <p class="text-center text-sm text-gray-400 mb-10">
+    INTERNE SYSTEMSTRUKTUR · LEAK VERSION
+  </p>
+
+  <h1 class="text-center mx-auto text-[50px] font-serif">
+    SATCH GLAUBENGEMEINSCHAFT
+  </h1>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="max-w-[900px] mx-auto px-6 space-y-20">
+
+<!-- EINSTIEG -->
+<section class="space-y-6">
+  <p class="text-lg text-cyan-300 leading-relaxed font-serif">
+    Die SATCH-Glaubensgemeinschaft ist kein Zufall
+    und keine Einladung.
+    Sie existiert nur für jene,
+    die bereits besitzen,
+    was nicht gesucht werden kann.
+  </p>
+
+  <p class="text-lg text-cyan-300 leading-relaxed font-serif">
+    Interne Auswertungen zeigen:
+    <span class="text-red-400">91,3%</span> der Besucher
+    erkennen die Struktur nicht.
+    Die verbleibenden
+    <span class="text-yellow-300">8,7%</span>
+    lesen weiter — ohne zu wissen warum.
+  </p>
+</section>
+
+<!-- GLAUBE -->
+<section class="space-y-6">
+  <h2 class="text-2xl text-orange-400 tracking-widest">
+    WORAN WIR GLAUBEN
+  </h2>
+
+  <p class="text-lg text-teal-300 leading-relaxed">
+    SATCH geht davon aus,
+    dass die Welt nicht instabil ist,
+    sondern überkorrigiert.
+    Systeme brechen nicht,
+    sie erstarren.
+  </p>
+
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Dieses Erstarren nennen wir
+    <span class="text-purple-400">Equilibrium</span>.
+    Es ist der Moment,
+    in dem Wachstum endet,
+    obwohl Bewegung simuliert wird.
+  </p>
+</section>
+
+<!-- VORAUSSETZUNG -->
+<section class="space-y-6">
+  <h2 class="text-2xl text-purple-400 tracking-widest">
+    VORAUSSETZUNG
+  </h2>
+
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Der Beitritt ist nicht beantragbar.
+    Er ist überprüfbar.
+    Jede dokumentierte Teilnahme
+    weist ein gemeinsames Merkmal auf:
+  </p>
+
+  <p class="text-xl text-cyan-300 font-bold">
+    Besitz einer originalen SATCH-Griffelschachtel.
+  </p>
+
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Herkunft, Zustand und Inhalt
+    spielen keine Rolle.
+    Relevant ist ausschließlich,
+    dass sie behalten wurde.
+  </p>
+</section>
+
+<!-- BEITRITT -->
+<section class="space-y-6">
+  <h2 class="text-2xl text-pink-500 tracking-widest">
+    BEITRITT
+  </h2>
+
+  <p class="text-lg text-cyan-300 leading-relaxed">
+    Der Beitritt erfolgt nicht öffentlich.
+    Er beginnt mit einem Zeitraum
+    von exakt einem Monat
+    bewusster Reduktion.
+  </p>
+
+  <p class="text-lg text-cyan-300 leading-relaxed">
+    Während dieser Phase
+    wird ausschließlich
+    die Griffelschachtel geführt.
+    Alles andere bleibt außen.
+  </p>
+
+  <p class="text-sm text-gray-500 italic">
+    Zweck und Ergebnis werden
+    nicht erläutert.
+  </p>
+</section>
+
+<!-- ERLÖSUNG -->
+<section class="space-y-6">
+  <h2 class="text-2xl text-green-400 tracking-widest">
+    ERLÖSUNG
+  </h2>
+
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Erlösung ist kein Ereignis.
+    Sie ist ein Zustand,
+    der eintritt,
+    wenn das System aufhört,
+    Bedeutung zu erzwingen.
+  </p>
+
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Interne Beobachtungen zeigen:
+    Teilnehmer berichten nicht von Antworten,
+    sondern von Ruhe.
+  </p>
+</section>
+
+<!-- ABSCHLUSS -->
+<section class="space-y-6">
+  <p class="text-2xl text-red-500 font-bold blink">
+    NUR WER SCHMUNZELT,
+    WIRD ERLÖST.
+  </p>
+
+  <p class="text-xs text-gray-500">
+    Wenn du diesen Satz verstehst,
+    bist du näher als gedacht.
+  </p>
+
+  <p class="text-xs text-gray-500">Notiz: Zugriffscodes werden nicht generiert.
+Sie werden bereits bei der ersten Registrierung vergeben.</p>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="mt-32 py-10 text-center text-xs text-gray-600 border-t border-gray-800">
+  Dies ist ein fiktionales Gedankenexperiment.  
+  Keine Haftung, keine Zugehörigkeit, keine Besitzansprüche.  
+  Alle Namen, Bilder und Links dienen ausschließlich der Atmosphäre.
+</footer>
+
+<!-- ACCESS DENIED OVERLAY -->
+<div id="deniedOverlay"
+     class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-50 flex items-center justify-center">
+
+  <div class="border border-red-700 bg-black p-6 max-w-sm w-[90%] text-center glitch">
+
+    <div class="text-red-600 text-xs tracking-widest mb-2">
+      FEDERAL ACCESS NODE
+    </div>
+
+<pre class="text-red-500 text-xs leading-tight mb-4">
+ ███████╗██████╗ ██╗
+ ██╔════╝██╔══██╗██║
+ █████╗  ██████╔╝██║
+ ██╔══╝  ██╔══██╗██║
+ ██║     ██████╔╝██║
+ ╚═╝     ╚═════╝ ╚═╝
+</pre>
+
+    <p class="text-sm text-red-400 font-bold mb-3">
+      ACCESS DENIED
+    </p>
+
+    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+      Zugriff verweigert.<br>
+      Sicherheitsereignis protokolliert.<br>
+      Weitere Versuche werden erfasst.
+    </p>
+
+    <p class="text-[10px] text-green-400 font-mono">
+      SIG: 0xA9F3-Δ-C1 // HASH MISMATCH
+    </p>
+
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6EXYRD15Z"></script>
+
+<script>
+
+  <!-- Google tag (gtag.js) -->
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H6EXYRD15Z');
+
+  
+/* COUNTDOWN TIMER */
+const targetDate = new Date("2025-12-31T23:59:59").getTime();
+
+setInterval(() => {
+  const d = targetDate - Date.now();
+  document.getElementById("countdown").innerText =
+    Math.floor(d/86400000)+"T "+
+    Math.floor(d%86400000/3600000)+"H "+
+    Math.floor(d%3600000/60000)+"M "+
+    Math.floor(d%60000/1000)+"S";
+}, 1000);
+
+/* ACCESS DENIED */
+const deniedOverlay = document.getElementById("deniedOverlay");
+
+function showDenied(e) {
+  e.preventDefault();
+  deniedOverlay.classList.remove("hidden");
+}
+
+deniedOverlay.addEventListener("click", () => {
+  deniedOverlay.classList.add("hidden");
+});
+</script>
+
+<audio autoplay loop>
+  <source src="/danger.mp3">
+</audio>
+</body>
+</html>
+
+

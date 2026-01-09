@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<title>SATCH GRÜNDER</title>
+<style>
+  body {
+    background:#040404;
+    color:#cfcfcf;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  .scan {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    z-index:1;
+  }
+
+  .locked {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  #passwordOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #passwordOverlay input {
+    background:#111;
+    border:1px solid #333;
+    color:#fff;
+    padding:0.5rem 1rem;
+    margin-top:1rem;
+    width:200px;
+    text-align:center;
+  }
+
+  section {
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:4rem;
+  }
+
+  .quote {
+    font-style: italic;
+    color:#ff77ff;
+    margin:1rem 0;
+  }
+
+  h1, h2 {
+    font-family: serif;
+  }
+
+  footer {
+    margin-top:4rem;
+    text-align:center;
+    font-size:0.75rem;
+    color:#777;
+    border-top:1px solid #333;
+    padding:2rem 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="scan"></div>
+
+<!-- PASSWORD OVERLAY -->
+<div id="passwordOverlay">
+  <div class="border border-red-700 p-10 max-w-md w-full text-center space-y-6">
+    <p class="text-red-500 tracking-widest text-xs">
+      GRÜNDER-ZUGRIFF GESCHÜTZT
+    </p>
+
+    <h2 class="text-xl text-pink-500 tracking-[0.3em]">
+      CODE EINGEBEN
+    </h2>
+
+    <input
+      id="passwordInput"
+      type="password"
+      placeholder="••••"
+      class="w-full bg-black border border-gray-700 text-center py-3 tracking-widest text-lg text-cyan-300 focus:outline-none focus:border-pink-500"
+      autofocus
+    />
+
+    <p id="errorMsg" class="text-red-500 text-xs hidden">
+      ZUGRIFF VERWEIGERT
+    </p>
+
+    <p class="text-gray-500 text-[10px] tracking-widest">
+      ALLE EINGABEN WERDEN PROTOKOLLIERT
+    </p>
+  </div>
+</div>
+
+<!-- PAGE CONTENT WRAPPER -->
+<div id="pageContent" class="locked">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-40 bg-black/90 border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex gap-10 text-xs tracking-widest">
+    <a href="index.html" class="text-gray-400 hover:text-white hover:underline">HOME</a>
+    <a href="regeln.html" class="text-gray-400 hover:text-white hover:underline">REGELWERK</a>
+    <a href="archiv.html" class="text-gray-400 hover:text-white hover:underline">ARCHIV</a>
+    <a href="founders.html" class="text-pink-500 hover:underline">GRÜNDER</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="pt-28 pb-16 max-w-[900px] mx-auto px-6 relative z-10">
+  <h1 class="text-4xl tracking-[0.35em] text-center text-pink-500 mb-6">
+    DIE GRÜNDER
+  </h1>
+  <p class="text-center text-xs text-gray-500">
+    Ursprung, Ideen & Philosophie
+  </p>
+
+  <div class="flex justify-center mt-6">
+    <!-- Platzhalter für Gruppenfoto -->
+    <svg width="300" height="150" style="background:#222;border:1px solid #555;"></svg>
+    <img src="" alt="">
+  </div>
+</header>
+
+<main class="max-w-[1100px] mx-auto px-6 pb-32 space-y-24 relative z-10">
+
+<section>
+  <p class="text-lg text-cyan-300 leading-relaxed">
+    Die Idee der Griffelschachtel entstand ursprünglich als Witz in der Schulzeit. 
+    Schnell wurde aus dem Scherz ernste Struktur.
+  </p>
+  <div class="quote">
+    <s>Name Gelöscht</s>: "Ich kann mich noch gut erinnern, als wir in der 3. Klasse nur Quatsch im Kopf hatten…"
+  </div>
+</section>
+
+<section>
+  <h2 class="text-2xl text-orange-400 tracking-widest mb-6">Titel 2</h2>
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Bildung, Struktur, Philosophie und Freiheit sind die stillen Pfeiler unserer Gemeinschaft. Bla Bla Bla 
+    Wir dokumentieren, verstehen und leiten weiter. Kontrolle ist nie das Ziel — Orientierung, Sinn und Struktur stehen im Mittelpunkt.
+  </p>
+</section>
+
+<section>
+  <h2 class="text-2xl text-orange-400 tracking-widest mb-6">Kurze Zitate</h2>
+  <div class="quote">"Baddies. Autos. Freiheit."</div>
+  <div class="quote">"Nicht alles, was sichtbar ist, ist wichtig."</div>
+  <div class="quote">"Ordnung ist keine Struktur, sie ist eine Entscheidung jeden Tag."</div>
+</section>
+
+<section>
+  <h2 class="text-2xl text-orange-400 tracking-widest mb-6">Vision</h2>
+  <p class="text-lg text-teal-300 leading-relaxed">
+    Wir führen nicht. Wir besitzen nicht. Wir verstehen, dokumentieren und geben weiter.  
+    Bewegung, Eigenständigkeit, Freiheit — alles andere entsteht aus der Ordnung, die wir selbst gewählt haben.
+  </p>
+</section>
+
+<section class="mt-16 text-center">
+  <p class="text-pink-500 text-xl font-bold">„Macht zeigt sich nicht darin, was man nimmt — sondern darin, was man nicht nehmen muss.“</p>
+</section>
+
+</main>
+
+<footer class="py-10 text-center text-xs text-gray-600 border-t border-gray-800">
+  SATCH · GRÜNDERSYSTEM · GEDANKENEXPERIMENT · KEINE HAFTUNG · ALLE BILDER UND LINKS NICHT EIGENTUM
+</footer>
+
+</div>
+
+<script>
+const correctCode = "1802";
+const overlay = document.getElementById("passwordOverlay");
+const content = document.getElementById("pageContent");
+const input = document.getElementById("passwordInput");
+const error = document.getElementById("errorMsg");
+
+if (sessionStorage.getItem("satch_access2") === "granted") unlock();
+
+input.addEventListener("keydown", e => { if(e.key==="Enter") checkCode(); });
+
+function checkCode() {
+  if(input.value === correctCode){
+    sessionStorage.setItem("satch_access2","granted");
+    unlock();
+  } else {
+    error.classList.remove("hidden");
+    input.value="";
+  }
+}
+
+function unlock() {
+  overlay.style.display="none";
+  content.classList.remove("locked");
+}
+</script>
+
+</body>
+</html>

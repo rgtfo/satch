@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>SATCH ARCHIV – REGELWERK</title>
+
+  <style>
+    body{
+      background:#050505;
+      color:#cfcfcf;
+      font-family:ui-monospace, SFMono-Regular, Menlo, monospace;
+      line-height:1.9;
+    }
+    .scan{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.025),
+        rgba(255,255,255,0.025) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index:1;
+    }
+    .section{
+      border-left:2px solid #222;
+      padding-left:1.5rem;
+      margin-top:5rem;
+    }
+    @media(max-width:640px){
+      .section{
+        border-left:none;
+        padding-left:0;
+      }
+    }
+    .meta{
+      font-size:.8rem;
+      color:#777;
+    }
+    .forbidden{
+      margin-top:6rem;
+      padding:2rem;
+      border:1px solid #400;
+      background:linear-gradient(180deg,#000,#060606);
+      position:relative;
+    }
+    .forbidden::before{
+      content:"ZUGRIFF NICHT AUTORISIERT";
+      position:absolute;
+      top:-12px;
+      left:14px;
+      background:#600;
+      color:#fff;
+      font-size:.7rem;
+      padding:3px 8px;
+      letter-spacing:2px;
+    }
+  </style>
+</head>
+
+<body class="relative overflow-x-hidden">
+<div class="scan"></div>
+
+<nav class="fixed top-0 left-0 w-full z-40 bg-black/90 border-b border-gray-800">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex gap-10 text-xs tracking-widest">
+    <a href="index.html" class="text-gray-400 hover:text-white hover:underline">HOME</a>
+    <a href="regeln.html" class="text-pink-500 hover:underline">REGELWERK</a>
+    <a href="archiv.html" class="text-gray-400 hover:text-white hover:underline">ARCHIV</a>
+    <a href="founders.html" class="text-gray-400 hover:text-white hover:underline">GRÜNDER</a>
+  </div>
+</nav>
+
+<header class="pt-28 pb-16 max-w-[900px] mx-auto px-6 text-center relative z-10">
+  <h1 class="text-[52px] md:text-[70px] font-serif tracking-widest">
+    REGELWERK
+  </h1>
+  <p class="text-sm text-gray-400 mt-4">
+    SYSTEMISCHE BESCHREIBUNG · LEAK VERSION
+  </p>
+  <p class="meta mt-2">
+    Revision: Δ-13.4<br>
+    Klassifizierung: Beobachtungsebene
+  </p>
+</header>
+
+<main class="max-w-[900px] mx-auto px-6 pb-32 relative z-10">
+
+<!-- 1 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">1 · VORWORT ZUR NICHT-EINORDNUNG</h2>
+
+<p>
+Dieses Dokument beschreibt kein Regelwerk im klassischen Sinn.
+Es existiert, um Referenzen zu erzeugen,
+nicht um Verhalten zu steuern.
+</p>
+
+<p>
+SATCH ist kein Projekt,
+keine Bewegung
+und keine Idee,
+sondern ein stabiler Begriff,
+der verwendet wird,
+wenn andere Begriffe versagen.
+</p>
+
+<p>
+Sollte sich beim Lesen
+ein Gefühl von Bedeutung einstellen,
+ist dies als Nebeneffekt zu werten
+und nicht als Ziel.
+</p>
+</section>
+
+<!-- 2 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">2 · ÜBER BETEILIGUNG</h2>
+
+<p>
+Beteiligung ist kein Status.
+Sie ist weder sichtbar noch messbar
+und kann nicht beantragt werden.
+</p>
+
+<p>
+Interne Modelle gehen davon aus,
+dass Beteiligung
+oft rückwirkend erkannt wird.
+</p>
+
+<p>
+Viele Beteiligte berichten,
+dass sie „schon immer“
+Teil des Systems waren,
+ohne dies benennen zu können.
+</p>
+
+<p class="meta mt-4">
+Hinweis:  
+portugiesische Konstante.
+</p>
+</section>
+
+<!-- 3 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">3 · VORAUSSETZUNG: DIE GRIFFELSCHACHTEL</h2>
+
+<p>
+Der Besitz einer originalen Griffelschachtel
+ist keine Eintrittskarte,
+sondern eine notwendige Bedingung
+für die Beobachtung bestimmter Effekte.
+</p>
+
+<p>
+Originalität wird nicht geprüft.
+Der Versuch,
+sie zu beweisen,
+führt regelmäßig zu Fehlannahmen.
+</p>
+
+<p>
+Entscheidend ist nicht,
+woher die Schachtel stammt,
+sondern dass sie existiert
+und als solche akzeptiert wird.
+</p>
+
+<p>
+Leere Schachteln
+zeigen statistisch die höchste Wirkung.
+</p>
+</section>
+
+<!-- 4 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">4 · GRUNDSÄTZE DES GLAUBENS</h2>
+
+<p>
+SATCH operiert nicht mit Dogmen,
+sondern mit Annahmen,
+die jederzeit ersetzt werden können.
+</p>
+
+<ul class="list-disc ml-6 mt-4 space-y-2 text-sm">
+  <li>Systeme beobachten sich nicht selbst</li>
+  <li>Bedeutung entsteht immer verspätet</li>
+  <li>Ordnung ist ein Nebenprodukt</li>
+  <li>Erlösung ist kein Ereignis</li>
+  <li>Widerspruch ist funktional</li>
+</ul>
+
+<p class="mt-4">
+Diese Annahmen gelten nicht als wahr,
+sondern als ausreichend stabil.
+</p>
+</section>
+
+<!-- 5 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">5 · VERHALTENSVORSCHRIFTEN</h2>
+
+<p>
+Die folgenden Vorschriften
+sind nicht bindend.
+Ihre Missachtung
+hat keine Konsequenzen.
+</p>
+
+<ul class="list-decimal ml-6 mt-4 space-y-2 text-sm">
+  <li>Keine vollständigen Erklärungen liefern</li>
+  <li>Keine internen Begriffe popularisieren</li>
+  <li>Keine Symbole kommerziell ausschlachten</li>
+  <li>Ironie sparsam, Ernst dosiert einsetzen</li>
+  <li>Nie behaupten, „es verstanden zu haben“</li>
+  <li>Bei Zweifeln: nichts klären</li>
+</ul>
+
+<p class="mt-4">
+Diese Regeln dienen ausschließlich
+der Wahrung des Gleichgewichts.
+</p>
+</section>
+
+<!-- 6 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">6 · DER JUNGELZUSTAND</h2>
+
+<p>
+Der Jungelzustand beschreibt eine Phase,
+in der externe Orientierung
+temporär an Relevanz verliert.
+</p>
+
+<p>
+Messungen zeigen,
+dass während dieser Phase
+die Wahrnehmung von Zufällen
+signifikant ansteigt.
+</p>
+
+<p>
+Der Jungel ist kein Ort.
+Er endet nicht,
+sondern wird verlassen,
+sobald er benannt wird.
+</p>
+</section>
+
+<!-- 7 -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">7 · ERLÖSUNG (ARBEITSBEGRIFF)</h2>
+
+<p>
+Erlösung ist kein Ziel.
+Sie tritt auf,
+wenn das Streben nach Zielhaftigkeit
+kurzzeitig aussetzt.
+</p>
+
+<p>
+Dieser Zustand
+ist instabil,
+angenehm
+und nicht reproduzierbar.
+</p>
+
+<p>
+Versuche,
+ihn festzuhalten,
+führen zu seinem sofortigen Ende.
+</p>
+</section>
+
+<!-- FORBIDDEN -->
+<section class="forbidden">
+
+<p>
+Dieser Abschnitt
+ist nicht zur Veröffentlichung vorgesehen.
+Dass er hier erscheint,
+ist ein Dokumentationsfehler.
+</p>
+
+<p>
+Interne Auswertungen legen nahe,
+dass SATCH nicht gegründet wurde.
+Vielmehr wurde ein bestehendes Muster
+nachträglich benannt.
+</p>
+
+<p>
+Historische Daten
+zeigen identische Strukturen
+in Organisationen,
+die keinen Kontakt
+zueinander hatten.
+</p>
+
+<p>
+Besonders auffällig:
+Wohlstand wird in diesen Strukturen
+nicht angestrebt,
+sondern vorausgesetzt.
+</p>
+
+<p>
+Aus diesem Grund
+wurde entschieden,
+keine Herkunft,
+keine Gründer
+und kein Ziel zu definieren.
+</p>
+
+<p class="text-red-600 font-bold mt-6">
+WEITERE ANALYSE GESPERRT.
+</p>
+</section>
+
+<!-- FINAL -->
+<section class="section">
+<h2 class="text-2xl text-orange-400 mb-6">ABSCHLIESSENDE NOTIZ</h2>
+
+<p>
+Wenn du bis hier gelesen hast,
+bist du weder aufgenommen
+noch ausgeschlossen worden.
+</p>
+
+<p>
+Du hast nichts zugestimmt.
+Du hast nichts versäumt.
+</p>
+
+<p>
+Und trotzdem
+ist etwas passiert,
+auch wenn es nicht benannt wird.
+</p>
+
+<p class="mt-6 text-sm italic text-gray-400">
+Am Ende gilt nur:
+<br><br>
+<span class="text-pink-400 font-bold">
+Nur wer schmunzelt, wird erlöst.
+</span>
+</p>
+</section>
+
+</main>
+
+<footer class="py-10 text-center text-xs text-gray-600 border-t border-gray-800">
+  Dies ist ein Gedankenexperiment.  
+  Keine Haftung, keine Ansprüche.  
+  Alle Bilder, Namen und Links sind nicht Eigentum der Betreiber.
+</footer>
+
+</body>
+</html>
+
